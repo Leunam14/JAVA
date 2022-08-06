@@ -10,14 +10,30 @@ public class usoEmpleado{
     
     public static void main(String[] args) {
 
-    empleado nuevoEmpleado = new empleado("Leunam", 1500, 2021, 05, 21);
+        empleado[] misEmpleados = new empleado[3];
 
-    //nuevoEmpleado.devuelveNombre(JOptionPane.showInputDialog("Escribe tu nombre"));
-    nuevoEmpleado.subeSueldo(15);
-
-    System.out.println(nuevoEmpleado.dameNombre() + ". El sueldo es de " + nuevoEmpleado.dameSueldo() + ". La fecha de contratación es " + nuevoEmpleado.dameFecha());
+        misEmpleados[0] = new empleado("Leunam", 1500, 2021, 6, 14);
+        misEmpleados[1] = new empleado("Cintia", 1800, 2022, 2, 7);
+        misEmpleados[2] = new empleado("Javier", 2100, 2018, 9, 28);
         
-    }
+    
+        for(int i = 0; i < misEmpleados.length; i++){
+            misEmpleados[i].subeSueldo(10);
+        }
+    
+        for(int i = 0; i < misEmpleados.length; i ++){
+            System.out.println(misEmpleados[i].dameNombre()  + ". El salario es de " + misEmpleados[i].dameSueldo() + "€. " + misEmpleados[i].dameFecha());
+        }
+    
+    
+        /* empleado nuevoEmpleado = new empleado("Leunam", 1500, 2021, 05, 21);
+    
+        //nuevoEmpleado.devuelveNombre(JOptionPane.showInputDialog("Escribe tu nombre"));
+        nuevoEmpleado.subeSueldo(15);
+    
+        System.out.println(nuevoEmpleado.dameNombre() + ". El sueldo es de " + nuevoEmpleado.dameSueldo() + ". La fecha de contratación es " + nuevoEmpleado.dameFecha());
+           */  
+        }
     
 }
 
