@@ -1,11 +1,12 @@
-package poo;
+
 
 import javax.swing.*;
 
-//EJERCICIO BASADO EN un TUTORIAL DE PILDORAS INFORMÁTICAS PARA REPASAR
 public class coche {
 
-    private int ruedas, largo, ancho, motor, peso_total, peso_plataforma;
+    private int ruedas, largo, ancho, motor, peso_plataforma;
+
+    private static int peso_total;
 
     private String color;
 
@@ -134,14 +135,42 @@ public class coche {
 
         Renault.cambioColor(JOptionPane.showInputDialog("Introduce color: "));
 
+        furgoneta Ford = new furgoneta(500, 2);
+
+        Ford.cambioColor(JOptionPane.showInputDialog("Introduce color de la furgoneta: "));
+
         Renault.configuraAsientos(JOptionPane.showInputDialog("¿Quieres asientos de cuero? "));
 
         Renault.configuraClimatizador(JOptionPane.showInputDialog("¿Quieres climatizador? "));
 
         System.out.println(Renault.devuelveDatos() + "\n" + Renault.dimeColor() +"\n" + Renault.dimeAsientos() + "\n" + Renault.dimeClimatizador()
-         + "\n" + Renault.dimePesoTotal() + "\n" + "El precio total del vehículo es " + Renault.precioVehiculo());
+         + "\n" + Renault.dimePesoTotal() + "\n" + "El precio total del vehículo es " + Renault.precioVehiculo() + 
+         "\n Datos furgoneta: " + Ford.datosFurgoneta() + Ford.dimeColor() + ". Tiene un peso total de " + (peso_total+50));
         
 
     }
+
+}
+
+class furgoneta extends coche{ //Uso de herencia
+    
+    private int carga_furgoneta;
+    private int plazas_extra;
+
+    public furgoneta (int carga_furgoneta, int plazas_extra){
+
+        super(); //Llama al constructor clase padre /(coche)
+
+        this.carga_furgoneta = carga_furgoneta;
+        this.plazas_extra = plazas_extra;
+
+    }
+
+    public String datosFurgoneta(){
+
+        return "La capacidad de carga es " + carga_furgoneta + ". Tiene " + plazas_extra + " plazas extra.";
+
+    }
+
 
 }
